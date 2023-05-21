@@ -1,0 +1,30 @@
+{
+  "name": "secret-files-api",
+  "version": "0.1.0",
+  "author": "Diego Canuhé <diego@dcanuhe.com>",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development node src/start.js",
+    "start": "NODE_ENV=production node src/start.js",
+    "test": "NODE_ENV=testing standard --env mocha && nyc mocha",
+    "test:watch": "NODE_ENV=testing nyc mocha --watch",
+    "lint": "NODE_ENV=development standard --env mocha"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.2.0",
+    "nock": "^13.3.1",
+    "nyc": "^15.1.0",
+    "standard": "^17.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.3.10",
+    "express": "^4.18.2",
+    "express-promise-router": "^4.1.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3"
+  }
+}

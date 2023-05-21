@@ -1,0 +1,28 @@
+.top-bar {
+  background-color: #ff6666;
+  color: white;
+  font-weight: bold;
+  padding: 3px 1px;
+}
+
+.col.wide {
+  padding: 0;
+}
+
+.files-data-table {
+  margin-top: 1em;
+}
+
+.files-data-table thead {
+  border-bottom: 2px solid black;
+}
+
+.weak {
+    opacity: 0.75;
+}
+
+.file-name-filter {
+  display: flex;
+  gap: 0.5em;
+  margin-top: 1em;
+}

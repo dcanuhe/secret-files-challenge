@@ -1,0 +1,12 @@
+services:
+  api:
+    build: secret-files-api
+    ports:
+      - "${API_PORT:-3000}:3000"
+  client:
+    build:
+      context: secret-files-client
+      args:
+        REACT_APP_API_URL: "http://localhost:${API_PORT:-3000}"
+    ports:
+      - "${CLIENT_PORT:-8080}:8080"
