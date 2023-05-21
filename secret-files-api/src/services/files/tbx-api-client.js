@@ -19,11 +19,20 @@ class TbxApiClient {
     })
   }
 
+  /**
+   * Retrieves the list of available files
+   * @returns {Promise.<Array.<string>>} the array of file names
+   */
   async getFileNames () {
     const res = await this.makeRequest(FILES_LIST_ENDPOINT)
     return res.data.files
   }
 
+  /**
+   * Retrieves the contents of a file
+   * @param {string} fileName the name of the file
+   * @returns {Promise.<string>} the contents of the file
+   */
   async getFileContent (fileName) {
     const res = await this.makeRequest(`${FILE_ENDPOINT}/${fileName}`)
     return res.data
