@@ -15,7 +15,9 @@ class FilesService {
   async getEntries ({ filters }) {
     const fileNames = filters?.fileName ? [filters.fileName] : await this.tbxApi.getFileNames()
     const filesContents = await Promise.all(fileNames.map(this.#fileNameToContent))
-    return filesContents.map(this.#toCsvLines).flat()
+    return filesContents
+      .map(this.#toCsvLines)
+      .flat()
       .filter(this.#isValidEntry)
       .map(this.#formatEntry)
       .sort(this.#sortByFile)
@@ -23,12 +25,12 @@ class FilesService {
   }
 
   /**
-  * Dowload the content of a file based on its name.
+   * Dowload the content of a file based on its name.
    * If there's an error dowloading the file, treat it as an empty file
    * @param {string} fileName the name of the file
    * @returns {Promise.<string>} the content of the file if all goes well or
-  *   an empty string if there's an error
-  */
+   *   an empty string if there's an error
+   */
   #fileNameToContent = async fileName => this.tbxApi.getFileContent(fileName).catch(e => '')
 
   #toCsvLines = text => parse(text, { columns: true, skip_records_with_error: true })
