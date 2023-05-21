@@ -14,6 +14,7 @@ export function useFilesData() {
       .then(data => {
         setData(data)
         setLoading(false)
+        setError(null)
       })
       .catch(error => {
         setError(error)
