@@ -58,7 +58,7 @@ API_PORT=3111 docker-compose build
 
 The API includes it own documentation.
 Go to `http://localhost:<api-port>/docs`, where `<api-port>` is the port you chose
-to comunicate with the app, to find out more.
+to comunicate with the API, to find out more.
 
 ### Client 
 
